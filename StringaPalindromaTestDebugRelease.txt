@@ -1,0 +1,36 @@
+BENCHMARK_ITERATORS=1000 (DEBUG)
+TEMPO v1 : 1.93
+TEMPO v2 : 16.12
+TEMPO v3 : 1.70
+
+BENCHMARK_ITERATORS=1000 (RELEASE)
+TEMPO v1 : 0.182
+TEMPO v2 : 1.517
+TEMPO v3 : 0.001
+------------------------------------------------------------
+BENCHMARK_ITERATORS=10000 (DEBUG)
+TEMPO v1 : 14.55
+TEMPO v2 : 111.658
+TEMPO v3 : 19.306
+
+BENCHMARK_ITERATORS=10000 (RELEASE)
+TEMPO v1 : 2.314
+TEMPO v2 : 16.122
+TEMPO v3 : 0.001
+------------------------------------------------------------
+BENCHMARK_ITERATORS=100000 (DEBUG)
+TEMPO v1 : 123.59
+TEMPO v2 : 1283.37
+TEMPO v3 : 236.606
+
+BENCHMARK_ITERATORS=100000 (RELEASE)
+TEMPO v1 : 16.587
+TEMPO v2 : 122.42
+TEMPO v3 : 0.001
+------------------------------------------------------------
+
+I tempi del software compilati in Release sono minori rispetto a quelli compilati in Debug poichè in modalità release non si aggiungo infromazioni aggiuntive come si fa in Debug.Queste informazioni  sono utili per debuggare e le (ottimizzazioni sono disattivate).Mentre nella release non ci sono informazioni aggiuntive e le ottimizzazioni sono attive.
+
+la v1 è quella più perfomante per tutti i valori(in modalità DEBUG).
+la v2 è quella peggiore in tutti i casi (sia in DEBUG che In RELEASE).
+la v3 è seconda in tempi alla v1 nella modalità Debug mentre in Release è la più performante in tutti casi.Ha un tempo di esecuzione costatnte. 

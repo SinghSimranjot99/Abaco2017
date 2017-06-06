@@ -1,0 +1,44 @@
+
+con 600
+v1 1.9
+v2 4.1
+v3 2.9
+
+con 750
+v1 3.0
+v2 5.3
+v3 3.5
+
+con 1000
+v1 3.8
+v2 7.1
+v3 2.6
+
+con 5000
+v1 16.25
+v2 22.95
+v3 12.96
+
+con 10000
+v1 25.04
+v2 46.04
+v3 23.82
+
+come si può notare dai valori riportati sopra la versione 1 (la funzione codificata da noi) è la piu efficente per il numero di cicli piccolo (BENCH_ITERATORS = 600 e 700).Poichè appena si confrontano due caratteri non uguali si esce dalla funzione.
+
+for(i=0,j=theString.size()-1;i<(theString.size()/2)&&(j>theString.size()/2);i++,j--){
+	   if(theString.at(i)!=theString.at(j))
+		   return false; 
+    }	   
+	return true;
+
+incrementando il numero di cicli la versione tre è quella più efficace (BENCH_ITERATORS = 1000,5000 e 10000).
+Poichè non deve fare alcuni controlli tipo quelli sugli indici che fa la versione 1.
+ 
+mentre la versione 2 è quella che meno efficente delle altre in tutti i casi. Un motivo può essere che va ad creare un oggetto di tipo string ogni volta.
+
+if(theString==string(theString.rbegin(),theString.rend())) //string(TheSring..) vai a creare un oggetto di tipo string
+	    return true;
+	  else
+	    return false;
+
